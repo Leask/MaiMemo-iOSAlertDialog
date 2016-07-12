@@ -13,7 +13,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfr-Ps-4DK" userLabel="contentView">
-                    <rect key="frame" x="60" y="136" width="480" height="428"/>
+                    <rect key="frame" x="60" y="148" width="480" height="404"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-r2-T5E">
                             <rect key="frame" x="16" y="8" width="44" height="28"/>
@@ -26,10 +26,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZH4-xF-af7">
-                            <rect key="frame" x="382" y="366" width="82" height="54"/>
+                            <rect key="frame" x="382" y="366" width="82" height="30"/>
                             <color key="backgroundColor" red="0.21176470589999999" green="0.70980392160000005" blue="0.61568627450000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="54" id="7iP-zu-Z2W"/>
+                                <constraint firstAttribute="height" constant="30" id="7iP-zu-Z2W"/>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="Ecw-GM-vTM"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="Fti-vi-oWt"/>
                                 <constraint firstAttribute="width" constant="82" id="r5T-5p-VGa"/>
@@ -75,7 +75,7 @@
                 <outlet property="titleLabel" destination="Gd2-r2-T5E" id="gZx-5V-sAB"/>
                 <outlet property="titleTopSpacing" destination="hrZ-lM-zSm" id="Cy0-GI-mAC"/>
             </connections>
-            <point key="canvasLocation" x="459" y="458"/>
+            <point key="canvasLocation" x="217" y="445"/>
         </view>
     </objects>
 </document>

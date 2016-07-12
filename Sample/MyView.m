@@ -93,13 +93,16 @@
 }
 
 - (void)animateTitle {
+    BOOL removing = NO;
     if (self.titleTopSpacing.constant > 0) {
         self.titleTopSpacing.constant = -self.titleLabel.frame.size.height;
+        removing = YES;
     } else {
         self.titleTopSpacing.constant = 21;
     }
     [UIView animateWithDuration:0.5 animations:^{
         [self layoutIfNeeded];
+        self.titleLabel.alpha = removing ? 0 : 1;
     }];
 }
 
