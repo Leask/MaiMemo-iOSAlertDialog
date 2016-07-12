@@ -11,5 +11,15 @@
 @interface ViewController : UIViewController
 
 
+@property (copy, nonatomic) NSAttributedString      *alertTitle;
+@property (copy, nonatomic) NSAttributedString      *alertContent;
+@property (strong, nonatomic) UIView                *contentView;
+
+- (void) dismiss;
+
+- (void) hide;
+
+- (void) show;
+
 @end
 
