@@ -12,6 +12,10 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *showAlertButton;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
+
 @end
 
 @implementation ViewController
@@ -28,6 +32,9 @@ UIButton *naturalButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.showAlertButton addTarget:self action:@selector(showAlert:) forControlEvents:UIControlEventTouchUpInside];
+    self.showAlertButton.layer.cornerRadius = 4;
+    self.showAlertButton.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.4];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,13 +50,6 @@ UIButton *naturalButton;
 //    AlertDialog *dialog = [[AlertDialog alloc] initWithViewCountroller: self];
 //    dialog.dialogTitle = [[NSAttributedString alloc] initWithString: @"Fuck" attributes:nil];
 //    [dialog show];
-    MyView *view = [MyView myViewWithFrame:CGRectMake(0, 0, 250, 250)];
-    view.center = self.view.center;
-    view.click = ^(ButtonAction action) {
-        NSLog(@"just to say hi");
-    };
-    [self.view addSubview:view];
-
 }
 
 - (void) show {
@@ -62,6 +62,42 @@ UIButton *naturalButton;
 
 - (void) dismiss {
     
+}
+
+
+/**
+ *  initiate view via button click
+ */
+- (void)showAlert:(UIButton *)button {
+    MyView *view = [MyView myView];
+    view.click = ^(ButtonAction action) {
+        NSLog(@"button clicked: %zd", action);
+    };
+
+    /**
+     *  Avoid retain cycle to define a weak reference of self used in block
+     *  bacuase this block does not get executed right after creation
+     */
+    __weak typeof(self) wself = self;
+    view.dismissBlock = ^(CGPoint point) {
+
+        /**
+         *  The overlay in MyView will by pass all gesture down while still detecting
+         *  tapping location. Location can then be used to determine whether any underlying view
+         *  should perform side effect.
+         */
+        NSLog(@"dismissed by clicking point %@", NSStringFromCGPoint(point));
+        if (CGRectContainsPoint(wself.label1.frame, point)) {
+            NSLog(@"you hit label 1");
+        } else if (CGRectContainsPoint(wself.label2.frame, point)) {
+            NSLog(@"you hit label 2");
+        } else if (CGRectContainsPoint(wself.showAlertButton.frame, point)) {
+            NSLog(@"you hit button");
+        } else {
+            NSLog(@"you hit nothing");
+        }
+    };
+    [view show];
 }
 
 @end

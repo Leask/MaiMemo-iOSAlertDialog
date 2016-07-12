@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,30 +31,55 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7a-SE-PhR">
+                                <rect key="frame" x="130" y="510" width="341" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="341" id="jdc-tF-mz6"/>
+                                </constraints>
+                                <state key="normal" title="ShowAlert"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hit test 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-C6-bP6">
+                                <rect key="frame" x="0.0" y="20" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.36964324510165986" green="0.56746881556858986" blue="0.66115665435791016" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ix6-Fa-ZLT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hit test 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuF-va-REW">
+                                <rect key="frame" x="300" y="20" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.66115665435791016" green="0.51307416385727556" blue="0.4677556741402995" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="z3V-6O-3Gn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mdf-C6-bP6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="Dx5-1f-H78"/>
+                            <constraint firstItem="KuF-va-REW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="JJa-0E-rRr"/>
+                            <constraint firstItem="mdf-C6-bP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="LQO-5m-lhB"/>
+                            <constraint firstItem="mdf-C6-bP6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="PJO-AE-FfH"/>
+                            <constraint firstItem="U7a-SE-PhR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="geG-Va-IIg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KuF-va-REW" secondAttribute="trailing" constant="-20" id="pWd-iu-HKp"/>
+                            <constraint firstItem="KuF-va-REW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1/2" id="xNU-dv-mvs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U7a-SE-PhR" secondAttribute="bottom" constant="60" id="zVe-JN-jMI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="mdf-C6-bP6" id="O67-TL-FIV"/>
+                        <outlet property="label2" destination="KuF-va-REW" id="zrV-Lt-P1W"/>
+                        <outlet property="showAlertButton" destination="U7a-SE-PhR" id="aYz-Ke-5oF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="429"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="S8T-7d-SSK">
-            <objects>
-                <viewController id="Sq2-CA-39q" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E6R-kk-OQ2"/>
-                        <viewControllerLayoutGuide type="bottom" id="YUP-9o-iDZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mj6-Ha-lUN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NRW-07-9UQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="334" y="444"/>
         </scene>
     </scenes>
 </document>

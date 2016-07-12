@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		357A68201D356A5300E26506 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357A681F1D356A5300E26506 /* MyView.xib */; };
+		357A68231D35784600E26506 /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 357A68221D35784600E26506 /* OverlayView.m */; };
 		7E58FADF1D33FFF800D9147C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FADE1D33FFF800D9147C /* main.m */; };
 		7E58FAE21D33FFF800D9147C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FAE11D33FFF800D9147C /* AppDelegate.m */; };
 		7E58FAE51D33FFF800D9147C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E58FAE41D33FFF800D9147C /* ViewController.m */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		357A681F1D356A5300E26506 /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
+		357A68211D35784600E26506 /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverlayView.h; sourceTree = "<group>"; };
+		357A68221D35784600E26506 /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverlayView.m; sourceTree = "<group>"; };
 		7E58FADA1D33FFF800D9147C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E58FADE1D33FFF800D9147C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E58FAE01D33FFF800D9147C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				7E58FB181D35014E00D9147C /* MyView.h */,
 				7E58FB191D35014E00D9147C /* MyView.m */,
 				357A681F1D356A5300E26506 /* MyView.xib */,
+				357A68211D35784600E26506 /* OverlayView.h */,
+				357A68221D35784600E26506 /* OverlayView.m */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E58FB131D34E91A00D9147C /* AlertDialog.m in Sources */,
+				357A68231D35784600E26506 /* OverlayView.m in Sources */,
 				7E58FAE51D33FFF800D9147C /* ViewController.m in Sources */,
 				7E58FAE21D33FFF800D9147C /* AppDelegate.m in Sources */,
 				7E58FADF1D33FFF800D9147C /* main.m in Sources */,

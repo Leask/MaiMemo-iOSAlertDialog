@@ -15,11 +15,15 @@ typedef NS_ENUM(NSInteger, ButtonAction) {
 };
 
 typedef void (^ClickBlock)(ButtonAction action);
+typedef void (^DismissBlock)(CGPoint tapPoint);
 
 @interface MyView : UIView
 
 @property (nonatomic, copy) ClickBlock click;
+@property (nonatomic, copy) DismissBlock dismissBlock;
 
-+ (instancetype)myViewWithFrame:(CGRect)frame;
++ (instancetype)myView;
+
+- (void)show;
 
 @end
