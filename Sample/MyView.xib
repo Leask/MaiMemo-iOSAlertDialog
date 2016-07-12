@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-r2-T5E">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd2-r2-T5E">
                     <rect key="frame" x="16" y="21" width="44" height="28"/>
                     <color key="backgroundColor" red="0.92156862750000001" green="0.61960784310000006" blue="0.1529411765" alpha="0.32062815659999999" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -46,6 +46,8 @@
             </constraints>
             <connections>
                 <outlet property="button" destination="ZH4-xF-af7" id="YWc-PB-vbL"/>
+                <outlet property="titleLabel" destination="Gd2-r2-T5E" id="gZx-5V-sAB"/>
+                <outlet property="titleTopSpacing" destination="FUo-Lt-EcT" id="8Wa-0E-ggO"/>
             </connections>
             <point key="canvasLocation" x="334" y="383"/>
         </view>

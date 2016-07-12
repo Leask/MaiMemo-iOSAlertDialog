@@ -11,6 +11,8 @@
 @interface MyView ()
 
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpacing;
 
 @end
 
@@ -20,6 +22,7 @@
     MyView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:self options:nil] firstObject];
     view.frame = frame;
     view.layer.borderWidth = 1;
+    view.clipsToBounds = YES;
     [view configureButton];
     return view;
 }
@@ -33,6 +36,18 @@
     if (self.click) {
         self.click(ButtonActionPositive);
     }
+    [self animateTitle];
+}
+
+- (void)animateTitle {
+    if (self.titleTopSpacing.constant > 0) {
+        self.titleTopSpacing.constant = -self.titleLabel.frame.size.height;
+    } else {
+        self.titleTopSpacing.constant = 21;
+    }
+    [UIView animateWithDuration:0.5 animations:^{
+        [self layoutIfNeeded];
+    }];
 }
 
 @end
