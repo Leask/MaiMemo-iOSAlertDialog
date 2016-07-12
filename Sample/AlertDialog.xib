@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,36 +27,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-kA-MYA">
-                    <rect key="frame" x="488" y="8" width="64" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="OVI-0H-yV2"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="gAs-DJ-RzV">
-                            <variation key="widthClass=compact" constant="64"/>
-                        </constraint>
-                    </constraints>
-                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                    <state key="normal" title="确定">
-                        <color key="titleColor" red="0.25882352941176473" green="0.66274509803921566" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="OVI-0H-yV2"/>
-                            <exclude reference="gAs-DJ-RzV"/>
-                        </mask>
-                    </variation>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="324" y="140" width="64" height="36"/>
-                        <mask key="constraints">
-                            <include reference="OVI-0H-yV2"/>
-                            <include reference="gAs-DJ-RzV"/>
-                        </mask>
-                    </variation>
-                    <connections>
-                        <action selector="positiveClick:" destination="-2" eventType="touchUpInside" id="4nh-EY-aMo"/>
-                        <action selector="positiveClick:" destination="-2" eventType="touchDown" id="I3h-Dl-DTd"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKK-1w-KUC">
                     <rect key="frame" x="8" y="8" width="64" height="36"/>
                     <constraints>
@@ -75,8 +45,7 @@
                             <exclude reference="yfP-Jn-fPF"/>
                         </mask>
                     </variation>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="16" y="140" width="64" height="36"/>
+                    <variation key="widthClass=compact">
                         <mask key="constraints">
                             <include reference="hjY-MO-viM"/>
                             <include reference="yfP-Jn-fPF"/>
@@ -98,7 +67,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <variation key="widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="-8" y="0.0" width="352" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="555" height="475"/>
                             </variation>
                         </textView>
                     </subviews>
@@ -153,8 +122,7 @@
                             <exclude reference="kLr-Kp-Ba3"/>
                         </mask>
                     </variation>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="252" y="140" width="64" height="36"/>
+                    <variation key="widthClass=compact">
                         <mask key="constraints">
                             <include reference="DwJ-zS-Yb5"/>
                             <include reference="kLr-Kp-Ba3"/>
@@ -163,6 +131,34 @@
                     <connections>
                         <action selector="negativeClick:" destination="-2" eventType="touchUpInside" id="1rF-2F-K9X"/>
                         <action selector="negativeClick:" destination="-1" eventType="touchUpInside" id="BOD-pA-HXO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCP-kA-MYA">
+                    <rect key="frame" x="488" y="8" width="64" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="OVI-0H-yV2"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="gAs-DJ-RzV">
+                            <variation key="widthClass=compact" constant="64"/>
+                        </constraint>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                    <state key="normal" title="确定">
+                        <color key="titleColor" red="0.25882352941176473" green="0.66274509803921566" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="OVI-0H-yV2"/>
+                            <exclude reference="gAs-DJ-RzV"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="OVI-0H-yV2"/>
+                            <include reference="gAs-DJ-RzV"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="naturalClick:" destination="-1" eventType="touchUpInside" id="aAs-Ja-tXd"/>
                     </connections>
                 </button>
             </subviews>
@@ -197,9 +193,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="PCP-kA-MYA"/>
                     <exclude reference="fKK-1w-KUC"/>
                     <exclude reference="fQ3-mj-l9s"/>
+                    <exclude reference="PCP-kA-MYA"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="1r1-Xv-MfY"/>
@@ -220,9 +216,9 @@
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="PCP-kA-MYA"/>
                     <include reference="fKK-1w-KUC"/>
                     <include reference="fQ3-mj-l9s"/>
+                    <include reference="PCP-kA-MYA"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="1r1-Xv-MfY"/>
