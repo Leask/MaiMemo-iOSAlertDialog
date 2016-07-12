@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -202,6 +202,12 @@
                     <exclude reference="fQ3-mj-l9s"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="1r1-Xv-MfY"/>
+                    <exclude reference="bDg-fj-5at"/>
+                    <exclude reference="ugL-p5-ve3"/>
+                    <exclude reference="Egd-Ow-2qG"/>
+                    <exclude reference="LVf-hC-WJv"/>
+                    <exclude reference="vmH-pj-zJX"/>
                     <exclude reference="Qjm-le-CP0"/>
                     <exclude reference="fZ0-kQ-jLh"/>
                     <exclude reference="ilx-47-uEV"/>
@@ -210,12 +216,6 @@
                     <exclude reference="k1Y-gz-s5j"/>
                     <exclude reference="sCZ-Jw-wgb"/>
                     <exclude reference="xbV-t4-1mo"/>
-                    <exclude reference="1r1-Xv-MfY"/>
-                    <exclude reference="bDg-fj-5at"/>
-                    <exclude reference="ugL-p5-ve3"/>
-                    <exclude reference="Egd-Ow-2qG"/>
-                    <exclude reference="LVf-hC-WJv"/>
-                    <exclude reference="vmH-pj-zJX"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -225,6 +225,12 @@
                     <include reference="fQ3-mj-l9s"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="1r1-Xv-MfY"/>
+                    <include reference="bDg-fj-5at"/>
+                    <include reference="ugL-p5-ve3"/>
+                    <include reference="Egd-Ow-2qG"/>
+                    <include reference="LVf-hC-WJv"/>
+                    <include reference="vmH-pj-zJX"/>
                     <include reference="Qjm-le-CP0"/>
                     <include reference="fZ0-kQ-jLh"/>
                     <include reference="ilx-47-uEV"/>
@@ -233,12 +239,6 @@
                     <include reference="k1Y-gz-s5j"/>
                     <include reference="sCZ-Jw-wgb"/>
                     <include reference="xbV-t4-1mo"/>
-                    <include reference="1r1-Xv-MfY"/>
-                    <include reference="bDg-fj-5at"/>
-                    <include reference="ugL-p5-ve3"/>
-                    <include reference="Egd-Ow-2qG"/>
-                    <include reference="LVf-hC-WJv"/>
-                    <include reference="vmH-pj-zJX"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="593" y="187"/>
