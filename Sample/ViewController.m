@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AlertDialog.h"
+#import "MyView.h"
 
 @interface ViewController ()
 
@@ -39,9 +40,12 @@ UIButton *naturalButton;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    AlertDialog *dialog = [[AlertDialog alloc] initWithViewCountroller: self];
-    dialog.dialogTitle = [[NSAttributedString alloc] initWithString: @"Fuck" attributes:nil];
-    [dialog show];
+//    AlertDialog *dialog = [[AlertDialog alloc] initWithViewCountroller: self];
+//    dialog.dialogTitle = [[NSAttributedString alloc] initWithString: @"Fuck" attributes:nil];
+//    [dialog show];
+    MyView *view = [MyView myView];
+    
+
 }
 
 - (void) show {

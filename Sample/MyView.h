@@ -10,4 +10,6 @@
 
 @interface MyView : UIView
 
++ (instancetype)myView;
+
 @end
