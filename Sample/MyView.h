@@ -10,6 +10,6 @@
 
 @interface MyView : UIView
 
-+ (instancetype)myView;
++ (instancetype)myViewWithFrame:(CGRect)frame;
 
 @end

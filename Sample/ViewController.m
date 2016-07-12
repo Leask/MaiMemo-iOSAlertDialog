@@ -43,7 +43,9 @@ UIButton *naturalButton;
 //    AlertDialog *dialog = [[AlertDialog alloc] initWithViewCountroller: self];
 //    dialog.dialogTitle = [[NSAttributedString alloc] initWithString: @"Fuck" attributes:nil];
 //    [dialog show];
-    MyView *view = [MyView myView];
+    MyView *view = [MyView myViewWithFrame:CGRectMake(0, 0, 250, 250)];
+    view.center = self.view.center;
+    [self.view addSubview:view];
     
 
 }

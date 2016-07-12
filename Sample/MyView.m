@@ -10,8 +10,11 @@
 
 @implementation MyView
 
-+ (instancetype)myView {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:self options:nil] firstObject];
++ (instancetype)myViewWithFrame:(CGRect)frame {
+    MyView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:self options:nil] firstObject];
+    view.frame = frame;
+    view.layer.borderWidth = 1;
+    return view;
 }
 
 @end
