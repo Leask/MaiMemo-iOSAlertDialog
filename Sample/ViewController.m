@@ -45,8 +45,10 @@ UIButton *naturalButton;
 //    [dialog show];
     MyView *view = [MyView myViewWithFrame:CGRectMake(0, 0, 250, 250)];
     view.center = self.view.center;
+    view.click = ^(ButtonAction action) {
+        NSLog(@"just to say hi");
+    };
     [self.view addSubview:view];
-    
 
 }
 

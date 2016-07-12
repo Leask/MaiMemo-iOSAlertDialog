@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, ButtonAction) {
+    ButtonActionPositive,
+    ButtonActionNegative,
+    ButtonActionNeutral
+};
+
+typedef void (^ClickBlock)(ButtonAction action);
+
 @interface MyView : UIView
+
+@property (nonatomic, copy) ClickBlock click;
 
 + (instancetype)myViewWithFrame:(CGRect)frame;
 

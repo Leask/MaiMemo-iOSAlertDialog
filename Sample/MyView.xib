@@ -44,6 +44,9 @@
                 <constraint firstItem="Gd2-r2-T5E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="utP-CO-E1W"/>
                 <constraint firstAttribute="trailing" secondItem="fJY-sN-owl" secondAttribute="trailing" constant="16" id="wEK-Rt-vVl"/>
             </constraints>
+            <connections>
+                <outlet property="button" destination="ZH4-xF-af7" id="YWc-PB-vbL"/>
+            </connections>
             <point key="canvasLocation" x="334" y="383"/>
         </view>
     </objects>
