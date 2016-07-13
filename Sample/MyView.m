@@ -112,11 +112,9 @@ BOOL hasTitle = NO;
         return 8 + CGRectGetHeight(_customView.frame) + 36 + 8 + 8;
     }
     [_titleLabel sizeToFit];
-    CGFloat width = [self measureWidth];
+    CGFloat width = [self measureWidth] - 48;
     CGFloat originHeight = _contentTextView.frame.size.height;
-    _contentTextView.frame = CGRectMake(24, 65, width, 100);
-    [_contentTextView sizeToFit];
-    CGFloat containerHeight =_contentTextView.contentSize.height;
+    CGFloat containerHeight = [_contentTextView sizeThatFits:CGSizeMake(width, FLT_MAX)].height;
     NSLog(@"%f, %f", _contentTextBottomSpacing.constant, _contentTextView.contentSize.height);
     return MIN([[UIScreen mainScreen] bounds].size.height * 0.85, self.frame.size.height + containerHeight - originHeight + topSpace);
 }
