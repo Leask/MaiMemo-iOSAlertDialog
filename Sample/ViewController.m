@@ -60,7 +60,7 @@ UIButton *naturalButton;
 - (IBAction)button:(id)sender {
     MyView *view = [MyView new];
     view.titleText = @"Use Google's location service";
-    view.contentText = @"To use Google's location service, you muse agree below protocol";
+    view.contentText = @"To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol";
     view.negativeText = @"取消";
     view.positiveBlock = ^(MyView *myView) {
         NSLog(@"OK clicked");

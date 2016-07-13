@@ -85,7 +85,8 @@ BOOL added = NO;
     CGFloat width = [self measureWidth] - 24 * 2;
     CGFloat originHeight = _contentTextView.frame.size.height;
     _contentTextView.frame = CGRectMake(24, 65, width, 100);
-    CGFloat containerHeight =_contentTextView.contentSize.height + _contentTextBottomSpacing.constant * 4;
+    [_contentTextView sizeToFit];
+    CGFloat containerHeight =_contentTextView.contentSize.height;
     NSLog(@"%f, %f", _contentTextBottomSpacing.constant, _contentTextView.contentSize.height);
     return MIN([[UIScreen mainScreen] bounds].size.height * 0.85, self.frame.size.height + containerHeight - originHeight);
 }
@@ -127,7 +128,12 @@ BOOL added = NO;
 }
 
 - (void) setContentText:(NSString *)contentText {
-    _contentTextView.text = contentText;
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.lineSpacing = 4;
+    _contentTextView.attributedText = [[NSAttributedString alloc]
+                                       initWithString:contentText
+                                       attributes: @{NSParagraphStyleAttributeName: style,
+                                                     NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
 }
 
 - (void) setPositiveText:(NSString *)positiveText {
