@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MyView">
             <rect key="frame" x="0.0" y="0.0" width="400" height="163"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -39,7 +39,7 @@
                     <rect key="frame" x="24" y="55" width="352" height="56"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YJ-VQ-Ch3">
-                            <rect key="frame" x="-3" y="0.0" width="355" height="48"/>
+                            <rect key="frame" x="-3" y="0.0" width="358" height="48"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -48,7 +48,7 @@
                         </textView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="8YJ-VQ-Ch3" secondAttribute="trailing" id="1VS-pp-t3j"/>
+                        <constraint firstAttribute="trailing" secondItem="8YJ-VQ-Ch3" secondAttribute="trailing" constant="-3" id="EDu-Y1-chI"/>
                         <constraint firstAttribute="bottom" secondItem="8YJ-VQ-Ch3" secondAttribute="bottom" constant="8" id="YU4-Wo-qGS"/>
                         <constraint firstItem="8YJ-VQ-Ch3" firstAttribute="top" secondItem="fJY-sN-owl" secondAttribute="top" id="mYc-Jy-XFn"/>
                         <constraint firstItem="8YJ-VQ-Ch3" firstAttribute="leading" secondItem="fJY-sN-owl" secondAttribute="leading" constant="-3" id="vkH-dj-qVK"/>
@@ -87,6 +87,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="containerLeftSpacing" destination="ExO-f8-KOK" id="bwP-He-itZ"/>
+                <outlet property="containerRightSpacing" destination="EHq-cd-c3g" id="iGu-zu-4EI"/>
                 <outlet property="contentContainer" destination="fJY-sN-owl" id="MOY-1O-CRy"/>
                 <outlet property="contentTextBottomSpacing" destination="YU4-Wo-qGS" id="rsz-89-cEC"/>
                 <outlet property="contentTextView" destination="8YJ-VQ-Ch3" id="Fm9-fi-ZBG"/>

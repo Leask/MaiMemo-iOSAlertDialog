@@ -22,6 +22,9 @@ typedef void (^Callback)(MyView * __autoreleasing);
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTextBottomSpacing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpacing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerLeftSpacing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerRightSpacing;
+
 
 @end
 
@@ -35,6 +38,7 @@ typedef void (^Callback)(MyView * __autoreleasing);
 @synthesize positiveBlock = _positiveBlock;
 @synthesize negativeBlock = _negativeBlock;
 @synthesize neturalBlock = _neturalBlock;
+@synthesize customView = _customView;
 
 UIView *parent;
 UIView *maskView;
@@ -78,22 +82,37 @@ BOOL hasTitle = NO;
     return self;
 }
 
++ (CGFloat) getMinWidth {
+    return 360;
+}
+
 - (CGFloat) measureWidth {
+    if (_customView != nil) {
+        _containerLeftSpacing.constant = 0;
+        _containerRightSpacing.constant = 0;
+        CGFloat customWidth = _customView.frame.size.width;
+        return MAX([MyView getMinWidth], customWidth);
+    }
+    _containerLeftSpacing.constant = 24;
+    _containerRightSpacing.constant = 24;
     return [[UIScreen mainScreen] bounds].size.width * 0.9;
 }
 
 - (CGFloat) measureHeight {
+    [_titleLabel layoutIfNeeded];
     CGFloat topSpace = 0;
     if (!hasTitle) {
-        _titleTopSpacing.constant = -_titleLabel.frame.size.height;
+        _titleTopSpacing.constant = -(_titleLabel.frame.size.height + (_customView == nil ? 0 : 4));
         topSpace = -_titleLabel.frame.size.height - 12;
     } else {
         _titleTopSpacing.constant = 16;
         topSpace = 0;
     }
-    [_titleLabel layoutIfNeeded];
+    if (_customView != nil) {
+        return 8 + CGRectGetHeight(_customView.frame) + 36 + 8 + 8;
+    }
     [_titleLabel sizeToFit];
-    CGFloat width = [self measureWidth] - 24 * 2;
+    CGFloat width = [self measureWidth];
     CGFloat originHeight = _contentTextView.frame.size.height;
     _contentTextView.frame = CGRectMake(24, 65, width, 100);
     [_contentTextView sizeToFit];
@@ -106,6 +125,10 @@ BOOL hasTitle = NO;
     maskView.hidden = NO;
     if (!added) {
         [[MyView frontMostWindow] addSubview:maskView];
+        if (_customView != nil) {
+            [_contentTextView removeFromSuperview];
+            [_contentContainer addSubview:_customView];
+        }
     }
     self.frame = CGRectMake(0, 0, [self measureWidth], [self measureHeight]);
     self.center = maskView.center;
@@ -151,6 +174,12 @@ BOOL hasTitle = NO;
                                        attributes: @{NSParagraphStyleAttributeName: style,
                                                      NSForegroundColorAttributeName: [UIColor darkGrayColor]}];
 }
+
+- (void) setCustomView:(UIView *)customView {
+    customView.frame = CGRectMake(0, 0, customView.frame.size.width, customView.frame.size.height);
+    _customView = customView;
+}
+
 
 - (void) setPositiveText:(NSString *)positiveText {
     [_positiveButton setTitle:positiveText forState:UIControlStateNormal];
