@@ -20,6 +20,12 @@ typedef void (^ClickBlock)(ButtonAction action);
 
 @property (nonatomic, copy) ClickBlock click;
 
-+ (instancetype)myViewWithFrame:(CGRect)frame;
++ (UIWindow *)frontMostWindow;
+
+- (void) show;
+
+- (void) hide;
+
+- (void) dismiss;
 
 @end

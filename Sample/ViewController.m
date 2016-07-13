@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "AlertDialog.h"
 #import "MyView.h"
 
 @interface ViewController ()
@@ -43,13 +42,8 @@ UIButton *naturalButton;
 //    AlertDialog *dialog = [[AlertDialog alloc] initWithViewCountroller: self];
 //    dialog.dialogTitle = [[NSAttributedString alloc] initWithString: @"Fuck" attributes:nil];
 //    [dialog show];
-    MyView *view = [MyView myViewWithFrame:CGRectMake(0, 0, 250, 250)];
-    view.center = self.view.center;
-    view.click = ^(ButtonAction action) {
-        NSLog(@"just to say hi");
-    };
-    [self.view addSubview:view];
-
+    MyView *view = [MyView new];
+    [view show];
 }
 
 - (void) show {
