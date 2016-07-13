@@ -8,24 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, ButtonAction) {
-    ButtonActionPositive,
-    ButtonActionNegative,
-    ButtonActionNeutral
-};
-
-typedef void (^ClickBlock)(ButtonAction action);
-
 @interface MyView : UIView
 
-@property (nonatomic, copy) ClickBlock click;
-
 + (UIWindow *)frontMostWindow;
+
+typedef void (^Callback)(MyView *);
+
+@property (copy, nonatomic) NSString    *titleText;
+@property (copy, nonatomic) NSString    *contentText;
+@property (copy, nonatomic) Callback    onDismiss;
+@property (copy, nonatomic) Callback    onCancel;
+
+@property (copy, nonatomic) NSString    *positiveText;
+@property (copy, nonatomic) NSString    *negativeText;
+@property (copy, nonatomic) NSString    *neturalText;
+
+@property (copy, nonatomic) Callback    positiveBlock;
+@property (copy, nonatomic) Callback    negativeBlock;
+@property (copy, nonatomic) Callback    neturalBlock;
 
 - (void) show;
 
 - (void) hide;
 
 - (void) dismiss;
-
 @end
