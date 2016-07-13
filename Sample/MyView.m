@@ -20,8 +20,8 @@ typedef void (^Callback)(MyView * __autoreleasing);
 @property (weak, nonatomic) IBOutlet UIView             *contentContainer;
 @property (weak, nonatomic) IBOutlet UITextView         *contentTextView;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpacing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTextBottomSpacing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopSpacing;
 
 @end
 
@@ -39,6 +39,7 @@ typedef void (^Callback)(MyView * __autoreleasing);
 UIView *parent;
 UIView *maskView;
 BOOL added = NO;
+BOOL hasTitle = NO;
 
 + (UIWindow *)frontMostWindow {
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -63,6 +64,7 @@ BOOL added = NO;
         self = [[[NSBundle mainBundle] loadNibNamed:@"MyView" owner:self options:nil] firstObject];
         self.layer.cornerRadius = 2.0f;
         self.autoresizesSubviews = YES;
+
         [maskView addSubview:self];
         UIButton *transparentButton = [[UIButton alloc] initWithFrame:maskView.frame];
         transparentButton.backgroundColor = [UIColor clearColor];
@@ -81,6 +83,15 @@ BOOL added = NO;
 }
 
 - (CGFloat) measureHeight {
+    CGFloat topSpace = 0;
+    if (!hasTitle) {
+        _titleTopSpacing.constant = -_titleLabel.frame.size.height;
+        topSpace = -_titleLabel.frame.size.height - 12;
+    } else {
+        _titleTopSpacing.constant = 16;
+        topSpace = 0;
+    }
+    [_titleLabel layoutIfNeeded];
     [_titleLabel sizeToFit];
     CGFloat width = [self measureWidth] - 24 * 2;
     CGFloat originHeight = _contentTextView.frame.size.height;
@@ -88,7 +99,7 @@ BOOL added = NO;
     [_contentTextView sizeToFit];
     CGFloat containerHeight =_contentTextView.contentSize.height;
     NSLog(@"%f, %f", _contentTextBottomSpacing.constant, _contentTextView.contentSize.height);
-    return MIN([[UIScreen mainScreen] bounds].size.height * 0.85, self.frame.size.height + containerHeight - originHeight);
+    return MIN([[UIScreen mainScreen] bounds].size.height * 0.85, self.frame.size.height + containerHeight - originHeight + topSpace);
 }
 
 - (void) show {
@@ -124,7 +135,12 @@ BOOL added = NO;
 }
 
 - (void) setTitleText:(NSString *)titleText {
-    _titleLabel.text = titleText;
+    if (titleText == nil) {
+        hasTitle = NO;
+    } else {
+        _titleLabel.text = titleText;
+        hasTitle = YES;
+    }
 }
 
 - (void) setContentText:(NSString *)contentText {
