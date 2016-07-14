@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyView : UIView
+@interface AlertDialog : UIView
 
-typedef void (^Callback)(MyView *);
+typedef void (^Callback)(AlertDialog *);
 
 @property (copy, nonatomic) NSString    *titleText;
 @property (copy, nonatomic) NSString    *contentText;

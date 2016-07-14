@@ -6,12 +6,12 @@
 //  Copyright © 2016 TJT. All rights reserved.
 //
 
-#import "MyView.h"
+#import "AlertDialog.h"
 #define BACKGROUND_DIM 0.3f
 
-typedef void (^Callback)(MyView * __autoreleasing);
+typedef void (^Callback)(AlertDialog * __autoreleasing);
 
-@interface MyView ()
+@interface AlertDialog ()
 
 @property (weak, nonatomic) IBOutlet UILabel            *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton           *negativeButton;
@@ -28,7 +28,7 @@ typedef void (^Callback)(MyView * __autoreleasing);
 
 @end
 
-@implementation MyView
+@implementation AlertDialog
 
 @synthesize positiveText = _positiveText;
 @synthesize negativeText = _negativeText;
@@ -65,7 +65,7 @@ BOOL hasTitle = NO;
         maskView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
         maskView.backgroundColor = [UIColor colorWithRed:0.f green:0.f blue:0.f alpha: 0.4f];
         
-        self = [[[NSBundle mainBundle] loadNibNamed:@"MyView" owner:self options:nil] firstObject];
+        self = [[[NSBundle mainBundle] loadNibNamed:@"AlertDialog" owner:self options:nil] firstObject];
         self.layer.cornerRadius = 2.0f;
         self.autoresizesSubviews = YES;
 
@@ -91,7 +91,7 @@ BOOL hasTitle = NO;
         _containerLeftSpacing.constant = 0;
         _containerRightSpacing.constant = 0;
         CGFloat customWidth = _customView.frame.size.width;
-        return MAX([MyView getMinWidth], customWidth);
+        return MAX([AlertDialog getMinWidth], customWidth);
     }
     _containerLeftSpacing.constant = 24;
     _containerRightSpacing.constant = 24;
@@ -122,7 +122,7 @@ BOOL hasTitle = NO;
 - (void) show {
     maskView.hidden = NO;
     if (!added) {
-        [[MyView frontMostWindow] addSubview:maskView];
+        [[AlertDialog frontMostWindow] addSubview:maskView];
         if (_customView != nil) {
             [_contentTextView removeFromSuperview];
             [_contentContainer addSubview:_customView];

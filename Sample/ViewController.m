@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyView.h"
+#import "AlertDialog.h"
 
 @interface ViewController ()
 
@@ -58,24 +58,24 @@ UIButton *naturalButton;
 }
 
 - (IBAction)button:(id)sender {
-    MyView *view = [MyView new];
+    AlertDialog *view = [AlertDialog new];
 //    view.titleText = @"Use Google's location service";
     view.contentText = @"To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol.To use Google's location service, you muse agree below protocol";
     view.negativeText = @"取消";
-    view.positiveBlock = ^(MyView *myView) {
+    view.positiveBlock = ^(AlertDialog *myView) {
         NSLog(@"OK clicked");
     };
-    view.negativeBlock = ^(MyView *myView) {
+    view.negativeBlock = ^(AlertDialog *myView) {
         NSLog(@"Cancel clicked");
     };
     view.neturalText = @"帮助";
-    view.neturalBlock = ^(MyView *myView) {
+    view.neturalBlock = ^(AlertDialog *myView) {
         NSLog(@"Help Clicked");
     };
-    view.onCancel = ^(MyView *myView) {
+    view.onCancel = ^(AlertDialog *myView) {
         NSLog(@"Canceled");
     };
-    view.onDismiss = ^(MyView *myView) {
+    view.onDismiss = ^(AlertDialog *myView) {
         NSLog(@"dismissed");
     };
     [view show];
